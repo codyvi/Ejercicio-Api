@@ -10,7 +10,7 @@ let ejercicioSchema = mongoose.Schema({
 	tiempoInicio: {type : Number},
 	tiempoFinal: {type : Number},
 	tiempoAcumulado: {type : Number},
-	diasAcumulados: {type : Number},
+	diasAcumulados: {type : Number}
 });
 
 // let userSchema = mongoose.Schema({
@@ -21,7 +21,7 @@ let ejercicioSchema = mongoose.Schema({
 // 				 required : true }
 // })
 
-let Vicepresidencia = mongoose.model( 'ejercicio', ejercicioSchema );
+let Vicepresidencia = mongoose.model( 'ejercicios', ejercicioSchema );
 // let User = mongoose.model( 'User', userSchema );
 
 // let UserList = {
