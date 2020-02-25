@@ -76,33 +76,29 @@ app.get( "/api/ejercicio", ( req, res, next ) => {
 		});
 });
 
-// app.post( "/api/postPet", jsonParser, ( req, res, next ) => {
-// 	let name = req.body.name;
-// 	let typeOfPet = req.body.typeOfPet;
-// 	let id = req.body.id;
+app.post( "/api/EjerecioAn", jsonParser, ( req, res, next ) => {
+	let inicio = req.body.tiempoInicio; //Body en el apiutil de alexa
+ 	// let actividad = req.body.actividad;
+ 	// let id = req.body.id;
 
-// 	let newPet = {
-// 		name,
-// 		typeOfPet,
-// 		id
-// 	};
 
-// 	PetList.post(newPet)
-// 		.then( pet => {
-// 			return res.status( 201 ).json({
-// 				message : "Pet added to the list",
-// 				status : 201,
-// 				student : pet
-// 			});
-// 		})
-// 		.catch( error => {
-// 			res.statusMessage = "Something went wrong with the DB. Try again later.";
-// 			return res.status( 500 ).json({
-// 				status : 500,
-// 				message : "Something went wrong with the DB. Try again later."
-// 			});
-// 		});
-// });
+
+ 	VPList.post(inicio)
+ 		.then( pet => {
+ 			return res.status( 201 ).json({
+ 				message : "Pet added to the list",
+ 				status : 201,
+ 				student : pet
+			});
+		})
+		.catch( error => {
+			res.statusMessage = "No pudimos accesar a la base de datos. Intenta más tarde.";
+			return res.status( 500 ).json({
+ 				status : 500,
+ 				message : "No pudimos accesar a la base de datos. Intenta más tarde."
+ 			});
+ 		});
+ });
 
 let server;
 

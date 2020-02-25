@@ -80,16 +80,17 @@ let VPList = {
 					throw Error( error );
 				});
 	}
-	// ,
-	// post : function( newPet ){
-	// 	return Pet.create( newPet )
-	// 			.then( pet => {
-	// 				return pet;
-	// 			})
-	// 			.catch( error => {
-	// 				throw Error(error);
-	// 			});
-	// }
+	,
+	 post : function( id, tiempoInicio ){
+	 	return Vicepresidencia.findOne({id})
+	 			.then( doc => {
+					 doc.overwrite({tiempoInicio: tiempoInicio});
+					 await doc.save();
+	 			})
+	 			.catch( error => {
+	 				throw Error(error);
+	 			});
+	 }
 };
 
 module.exports = { VPList };
