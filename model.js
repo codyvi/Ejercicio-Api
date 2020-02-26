@@ -82,6 +82,7 @@ let VPList = {
 	}
 	,
 	 post : function( id, tiempoInicio ){
+		 console.log(id);
 		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {tiempoInicio}, (err) => {
 			if (err) {
 				throw Error(error);
