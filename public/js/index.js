@@ -14,7 +14,7 @@ function init(){
 			method: 'POST',
 			body: JSON.stringify({
 				id: id,
-				inicio: parseInt(tIni)
+				tiempoInicio: parseInt(tIni)
 			}),
 			headers: {
 				'Content-Type': 'application/json'
