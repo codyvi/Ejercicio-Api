@@ -82,14 +82,19 @@ let VPList = {
 	}
 	,
 	 post : function( id, tiempoInicio ){
-	 	return Vicepresidencia.findOne({id})
-	 			.then( async doc => {
-					 doc.tiempoInicio = tiempoInicio;
-					 await doc.save();
-	 			})
-	 			.catch( error => {
-	 				throw Error(error);
-	 			});
+		 return Vicepresidencia.findByIdAndUpdate(id, {tiempoInicio}, (err) => {
+			if (err) {
+				throw Error(error);
+			}
+		 })
+	 	// return Vicepresidencia.findOne({id})
+	 	// 		.then( async doc => {
+		// 			 doc.tiempoInicio = tiempoInicio;
+		// 			 await doc.save();
+	 	// 		})
+	 	// 		.catch( error => {
+	 	// 			throw Error(error);
+	 	// 		});
 	 }
 };
 
