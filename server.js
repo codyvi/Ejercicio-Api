@@ -77,8 +77,9 @@ app.get( "/api/ejercicio", ( req, res, next ) => {
 });
 
 app.post( "/api/EjerecioAn", jsonParser, ( req, res, next ) => {
+	console.log(req.body);
 	let inicio = req.body.tiempoInicio; //Body en el apiutil de alexa
- 	let id = req.body.nombre;
+ 	let id = req.body.id;
  	// let id = req.body.id;
 
 
