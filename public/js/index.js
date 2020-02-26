@@ -5,6 +5,42 @@ function init(){
 		method: 'GET'
 	}
 
+	document.getElementById("post").addEventListener("click", function(e) {
+		var id  = document.getElementById("Name").value;
+		var tIni = document.getElementById("tiempoini").value;
+
+		let url2 = '/api/EjerecioAn'
+		let settings2 = {
+			method: 'POST',
+			body: JSON.stringify({
+				nombre: id,
+				tiempo: tIni
+			}),
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			responseType: 'json'
+		}
+
+		fetch(url2, settings2)
+		.then( response => {
+			if ( response.ok ){
+				return response.json();
+			}
+
+			throw new Error ( response.statusText );
+		})
+		.then( responseJSON => {
+
+			console.log(responseJSON);
+		})
+		.catch( err => {
+			console.log( err );
+		})
+		// alert(document.getElementById("tiempoini").value);
+		
+	});
+
 	fetch(url, settings)
 		.then( response => {
 			if ( response.ok ){
@@ -17,7 +53,7 @@ function init(){
 
 			for ( let i = 0; i < responseJSON.length; i ++ ){
 				$('.listOfVPs').append(`<li>
-				${responseJSON[i].nombre} - Es nivel: ${responseJSON[i].nivel} 
+				${responseJSON[i].nombre} - Tiene tiempo de Inicio: ${responseJSON[i].tiempoInicio} 
 										</li>`)
 			}
 		})
