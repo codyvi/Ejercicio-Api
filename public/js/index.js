@@ -14,12 +14,11 @@ function init(){
 			method: 'POST',
 			body: JSON.stringify({
 				id: id,
-				inicio: tIni
+				inicio: parseInt(tIni)
 			}),
 			headers: {
 				'Content-Type': 'application/json'
 			},
-			responseType: 'json'
 		}
 
 		fetch(url2, settings2)
