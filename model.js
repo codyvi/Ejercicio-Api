@@ -82,11 +82,11 @@ let VPList = {
 	}
 	,
 	 post : function( id, tiempoInicio ){
-		 return Vicepresidencia.findByIdAndUpdate(id, {tiempoInicio}, (err) => {
+		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {tiempoInicio}, (err) => {
 			if (err) {
 				throw Error(error);
 			}
-		 })
+		 });
 	 	// return Vicepresidencia.findOne({id})
 	 	// 		.then( async doc => {
 		// 			 doc.tiempoInicio = tiempoInicio;
