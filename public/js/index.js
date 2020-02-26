@@ -13,8 +13,8 @@ function init(){
 		let settings2 = {
 			method: 'POST',
 			body: JSON.stringify({
-				nombre: id,
-				tiempo: tIni
+				id: id,
+				inicio: tIni
 			}),
 			headers: {
 				'Content-Type': 'application/json'
