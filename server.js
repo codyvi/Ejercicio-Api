@@ -78,12 +78,12 @@ app.get( "/api/ejercicio", ( req, res, next ) => {
 
 app.post( "/api/EjerecioAn", jsonParser, ( req, res, next ) => {
 	let inicio = req.body.tiempoInicio; //Body en el apiutil de alexa
- 	// let actividad = req.body.actividad;
+ 	let id = req.body.nombre;
  	// let id = req.body.id;
 
 
 
- 	VPList.post(inicio)
+ 	VPList.post(id,inicio)
  		.then( pet => {
  			return res.status( 201 ).json({
  				message : "Pet added to the list",

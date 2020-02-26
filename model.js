@@ -83,7 +83,7 @@ let VPList = {
 	,
 	 post : function( id, tiempoInicio ){
 	 	return Vicepresidencia.findOne({id})
-	 			.then( doc => {
+	 			.then( async doc => {
 					 doc.overwrite({tiempoInicio: tiempoInicio});
 					 await doc.save();
 	 			})
