@@ -88,14 +88,6 @@ let VPList = {
 				throw Error(error);
 			}
 		 });
-	 	// return Vicepresidencia.findOne({id})
-	 	// 		.then( async doc => {
-		// 			 doc.tiempoInicio = tiempoInicio;
-		// 			 await doc.save();
-	 	// 		})
-	 	// 		.catch( error => {
-	 	// 			throw Error(error);
-	 	// 		});
 	 }
 };
 

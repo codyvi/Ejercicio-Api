@@ -85,11 +85,11 @@ app.post( "/api/EjerecioAn", jsonParser, ( req, res, next ) => {
 
 
  	VPList.post(id,inicio)
- 		.then( pet => {
+ 		.then( persona => {
  			return res.status( 201 ).json({
  				message : "Se cambio el valor",
  				status : 201,
- 				student : pet
+ 				Persona : persona
 			});
 		})
 		.catch( error => {
