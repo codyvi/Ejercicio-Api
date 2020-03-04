@@ -87,7 +87,7 @@ app.post( "/api/EjerecioAn", jsonParser, ( req, res, next ) => {
  	VPList.post(id,inicio)
  		.then( pet => {
  			return res.status( 201 ).json({
- 				message : "Pet added to the list",
+ 				message : "Se cambio el valor",
  				status : 201,
  				student : pet
 			});
