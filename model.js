@@ -91,10 +91,11 @@ let VPList = {
 	 }
 	 ,
 	 postTiempoFinal: function(id, tiempoFinal){
-		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {tiempoFinal: tiempoFinal}, (err) =>{
+		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {tiempoFinal: tiempoFinal}, (err, doc) =>{
 			 if(err){
 				 throw Error(error);
 			 }
+			 return doc
 		 });
 	 }, 
 	 postNivel: function(id, nivel){
