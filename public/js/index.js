@@ -41,7 +41,7 @@ function init(){
 	});
 
 	document.getElementById("post2").addEventListener("click", function(e) {
-		var id  = document.getElementById("Name").value;
+		var id  = document.getElementById("Name2").value;
 		var tFin = document.getElementById("tiempofinal").value;
 
 		let url2 = '/api/EjercicioAn2'
