@@ -91,6 +91,7 @@ let VPList = {
 	 }
 	 ,
 	 postTiempoFinal: function(id, tiempoFinal){
+		console.log(id);
 		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {tiempoFinal: tiempoFinal}, (err, doc) =>{
 			 if(err){
 				 throw Error(error);
