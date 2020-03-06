@@ -81,12 +81,27 @@ let VPList = {
 				});
 	}
 	,
-	 post : function( id, tiempoInicio ){
+	 postTiempoInicio : function( id, tiempoInicio ){
 		 console.log(id);
 		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {tiempoInicio: tiempoInicio}, (err) => {
 			if (err) {
 				throw Error(error);
 			}
+		 });
+	 }
+	 ,
+	 postTiempoFinal: function(id, tiempoFinal){
+		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {tiempoFinal: tiempoFinal}, (err) =>{
+			 if(err){
+				 throw Error(error);
+			 }
+		 });
+	 }, 
+	 postNivel: function(id, nivel){
+		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {nivel: nivel}, (err) =>{
+			 if(err){
+				 throw Error(error);
+			 }
 		 });
 	 }
 };

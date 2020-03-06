@@ -76,15 +76,56 @@ app.get( "/api/ejercicio", ( req, res, next ) => {
 		});
 });
 
+app.post("/api/EjerccicoAn2", jsonParser, (req, res, next) =>{
+	let tiempoFinal = req.body.tiempoFinal;
+	let id = req.body.id;
+
+	VPList.postTiempoFinal(id, tiempoFinal)
+	.then( persona =>{
+		return res.status( 201 ).json({
+			message: "Se cambio el valor",
+			status: 201,
+			Persona: persona
+		});
+	})
+	.catch( error => {
+		res.statusMessage = "No pudimos accesar a la base de datos. Intenta más tarde.";
+		return res.status( 500 ).json({
+			 status : 500,
+			 message : "No pudimos accesar a la base de datos. Intenta más tarde."
+		 });
+	});
+});
+
+app.post("/api/EjercicioAn3", jsonParser, (req, res, next) =>{
+	let nivel = req.body.nivel; //Body en el apiutil de alexa
+	let id = req.body.id;
+	// let id = req.body.id;
+
+	VPList.postNivel(id,nivel)
+		.then( persona => {
+			return res.status( 201 ).json({
+				message : "Se cambio el valor",
+				status : 201,
+				Persona : persona
+		   });
+	   })
+	   .catch( error => {
+		   res.statusMessage = "No pudimos accesar a la base de datos. Intenta más tarde.";
+		   return res.status( 500 ).json({
+				status : 500,
+				message : "No pudimos accesar a la base de datos. Intenta más tarde."
+			});
+		});
+})
+
 app.post( "/api/EjerecioAn", jsonParser, ( req, res, next ) => {
 	console.log(req.body);
 	let inicio = req.body.tiempoInicio; //Body en el apiutil de alexa
  	let id = req.body.id;
  	// let id = req.body.id;
 
-
-
- 	VPList.post(id,inicio)
+ 	VPList.postTiempoInicio(id,inicio)
  		.then( persona => {
  			return res.status( 201 ).json({
  				message : "Se cambio el valor",
@@ -98,7 +139,8 @@ app.post( "/api/EjerecioAn", jsonParser, ( req, res, next ) => {
  				status : 500,
  				message : "No pudimos accesar a la base de datos. Intenta más tarde."
  			});
- 		});
+		 });
+		
  });
 
 let server;
