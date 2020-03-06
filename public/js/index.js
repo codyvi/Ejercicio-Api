@@ -40,6 +40,40 @@ function init(){
 		
 	});
 
+	document.getElementById("post2").addEventListener("click", function(e) {
+		var id  = document.getElementById("Name").value;
+		var tFin = document.getElementById("tiempofinal").value;
+
+		let url2 = '/api/EjercicioAn2'
+		let settings2 = {
+			method: 'POST',
+			body: JSON.stringify({
+				id: id,
+				tiempoFinal: parseInt(tFin)
+			}),
+			headers: {
+				'Content-Type': 'application/json'
+			},
+		}
+
+		fetch(url2, settings2)
+		.then( response => {
+			if ( response.ok ){
+				return response.json();
+			}
+
+			throw new Error ( response.statusText );
+		})
+		.then( responseJSON => {
+
+			console.log(responseJSON);
+		})
+		.catch( err => {
+			console.log( err );
+		})
+		// alert(document.getElementById("tiempoini").value);
+	});
+
 	fetch(url, settings)
 		.then( response => {
 			if ( response.ok ){

@@ -76,7 +76,7 @@ app.get( "/api/ejercicio", ( req, res, next ) => {
 		});
 });
 
-app.post("/api/EjerccicoAn2", jsonParser, (req, res, next) =>{
+app.post("/api/EjercicioAn2", jsonParser, (req, res, next) =>{
 	let tiempoFinal = req.body.tiempoFinal;
 	let id = req.body.id;
 
