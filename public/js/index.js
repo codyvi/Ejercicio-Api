@@ -74,6 +74,41 @@ function init(){
 		// alert(document.getElementById("tiempoini").value);
 	});
 
+	document.getElementById("post3").addEventListener("click", function(e) {
+		var id  = document.getElementById("Name3").value;
+		var nIvel = document.getElementById("Nivel").value;
+
+		let url2 = '/api/EjercicioAn3'
+		let settings2 = {
+			method: 'POST',
+			body: JSON.stringify({
+				id: id,
+				nivel: parseInt(nIvel)
+			}),
+			headers: {
+				'Content-Type': 'application/json'
+			},
+		}
+
+		fetch(url2, settings2)
+		.then( response => {
+			if ( response.ok ){
+				return response.json();
+			}
+
+			throw new Error ( response.statusText );
+		})
+		.then( responseJSON => {
+
+			console.log(responseJSON);
+		})
+		.catch( err => {
+			console.log( err );
+		})
+		// alert(document.getElementById("tiempoini").value);
+	});
+
+
 	fetch(url, settings)
 		.then( response => {
 			if ( response.ok ){
