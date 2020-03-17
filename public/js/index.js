@@ -108,6 +108,74 @@ function init(){
 		// alert(document.getElementById("tiempoini").value);
 	});
 
+	document.getElementById("post4").addEventListener("click", function(e) {
+		var id  = document.getElementById("Name4").value;
+		var tAcum = document.getElementById("tAcum").value;
+
+		let url2 = '/api/EjercicioAn4'
+		let settings2 = {
+			method: 'POST',
+			body: JSON.stringify({
+				id: id,
+				tiempoAcumulado: parseInt(tAcum)
+			}),
+			headers: {
+				'Content-Type': 'application/json'
+			},
+		}
+
+		fetch(url2, settings2)
+		.then( response => {
+			if ( response.ok ){
+				return response.json();
+			}
+
+			throw new Error ( response.statusText );
+		})
+		.then( responseJSON => {
+
+			console.log(responseJSON);
+		})
+		.catch( err => {
+			console.log( err );
+		})
+		// alert(document.getElementById("tiempoini").value);
+	});
+
+	document.getElementById("post4").addEventListener("click", function(e) {
+		var id  = document.getElementById("Name5").value;
+		var dAcum = document.getElementById("dAcum").value;
+
+		let url2 = '/api/EjercicioAn5'
+		let settings2 = {
+			method: 'POST',
+			body: JSON.stringify({
+				id: id,
+				diasAcum: parseInt(dAcum)
+			}),
+			headers: {
+				'Content-Type': 'application/json'
+			},
+		}
+
+		fetch(url2, settings2)
+		.then( response => {
+			if ( response.ok ){
+				return response.json();
+			}
+
+			throw new Error ( response.statusText );
+		})
+		.then( responseJSON => {
+
+			console.log(responseJSON);
+		})
+		.catch( err => {
+			console.log( err );
+		})
+		// alert(document.getElementById("tiempoini").value);
+	});
+
 
 	fetch(url, settings)
 		.then( response => {

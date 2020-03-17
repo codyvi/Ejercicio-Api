@@ -105,6 +105,20 @@ let VPList = {
 				 throw Error(error);
 			 }
 		 });
+	 },
+	 postTiempoAcum: function(id, tiempoAcumulado){
+		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {tiempoFinal: tiempoAcumulado}, (err) =>{
+			 if(err){
+				 throw Error(error);
+			 }
+		 });
+	 },
+	 postDiasAcum: function(id, diasAcum){
+		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {diasAcumulados: diasAcum}, (err) => {
+			 if(err){
+				 throw Error(error);
+			 }
+		 });
 	 }
 };
 
