@@ -107,7 +107,7 @@ let VPList = {
 		 });
 	 },
 	 postTiempoAcum: function(id, tiempoAcumulado){
-		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {tiempoFinal: tiempoAcumulado}, (err) =>{
+		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {tiempoAcumulado: tiempoAcumulado}, (err) =>{
 			 if(err){
 				 throw Error(error);
 			 }
