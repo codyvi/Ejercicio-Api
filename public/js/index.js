@@ -142,7 +142,7 @@ function init(){
 		// alert(document.getElementById("tiempoini").value);
 	});
 
-	document.getElementById("post4").addEventListener("click", function(e) {
+	document.getElementById("post5").addEventListener("click", function(e) {
 		var id  = document.getElementById("Name5").value;
 		var dAcum = document.getElementById("dAcum").value;
 
