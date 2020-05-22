@@ -185,7 +185,7 @@ function init(){
 			method: 'POST',
 			body: JSON.stringify({
 				id: id,
-				diasAcum: parseInt(dExp)
+				diasAcum: dExp
 			}),
 			headers: {
 				'Content-Type': 'application/json'
