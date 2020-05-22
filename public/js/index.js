@@ -180,6 +180,8 @@ function init(){
 		var id  = document.getElementById("Name6").value;
 		var dExp = document.getElementById("dExp").value;
 
+		console.log(dExp)
+
 		let url2 = '/api/EjercicioAn6'
 		let settings2 = {
 			method: 'POST',
