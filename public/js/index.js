@@ -188,7 +188,7 @@ function init(){
 			method: 'POST',
 			body: JSON.stringify({
 				id: id,
-				experiencia: String(dExp)
+				exp: dExp
 			}),
 			headers: {
 				'Content-Type': 'application/json'

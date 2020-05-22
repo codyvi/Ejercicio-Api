@@ -11,7 +11,7 @@ let ejercicioSchema = mongoose.Schema({
 	tiempoFinal: {type : Number},
 	tiempoAcumulado: {type : Number},
 	diasAcumulados: {type : Number},
-	experiencia: {type: String}
+	experiencia: {type : String}
 });
 
 // let userSchema = mongoose.Schema({
