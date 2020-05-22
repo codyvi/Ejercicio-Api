@@ -180,14 +180,14 @@ function init(){
 		var id  = document.getElementById("Name6").value;
 		var dExp = document.getElementById("dExp").value;
 
-		console.log(dExp)
+
 
 		let url2 = '/api/EjercicioAn6'
 		let settings2 = {
 			method: 'POST',
 			body: JSON.stringify({
 				id: id,
-				diasAcum: String(dExp)
+				experiencia: dExp
 			}),
 			headers: {
 				'Content-Type': 'application/json'
