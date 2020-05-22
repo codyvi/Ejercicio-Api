@@ -181,6 +181,8 @@ function init(){
 		var dExp = document.getElementById("dExp").value;
 
 
+		console.log(typeof(dExp))
+
 		let url2 = '/api/EjercicioAn6'
 		let settings2 = {
 			method: 'POST',
