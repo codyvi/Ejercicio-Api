@@ -163,6 +163,28 @@ app.post("/api/EjercicioAn5", jsonParser, (req, res, next) =>{
 		});
 })
 
+app.post("/api/EjercicioAn6", jsonParser, (req, res, next) =>{
+	let exp = req.body.exp; //Body en el apiutil de alexa
+	let id = req.body.id;
+	// let id = req.body.id;
+
+	VPList.postExperiencia(id,exp)
+		.then( persona => {
+			return res.status( 201 ).json({
+				message : "Se cambio el valor",
+				status : 201,
+				Persona : persona
+		   });
+	   })
+	   .catch( error => {
+		   res.statusMessage = "No pudimos accesar a la base de datos. Intenta más tarde.";
+		   return res.status( 500 ).json({
+				status : 500,
+				message : "No pudimos accesar a la base de datos. Intenta más tarde."
+			});
+		});
+})
+
 
 
 app.post( "/api/EjerecioAn", jsonParser, ( req, res, next ) => {

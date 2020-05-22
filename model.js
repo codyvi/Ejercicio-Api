@@ -10,7 +10,8 @@ let ejercicioSchema = mongoose.Schema({
 	tiempoInicio: {type : Number},
 	tiempoFinal: {type : Number},
 	tiempoAcumulado: {type : Number},
-	diasAcumulados: {type : Number}
+	diasAcumulados: {type : Number},
+	experiencia: {type: String}
 });
 
 // let userSchema = mongoose.Schema({
@@ -115,6 +116,13 @@ let VPList = {
 	 },
 	 postDiasAcum: function(id, diasAcum){
 		 return Vicepresidencia.findOneAndUpdate({nombre: id}, {diasAcumulados: diasAcum}, (err) => {
+			 if(err){
+				 throw Error(error);
+			 }
+		 });
+	 },
+	 postExperiencia: function(id, exp){
+		 return Vicepresidencia.findOneAndUpdate({nombre:id}, {experiencia: exp}, (err) =>{
 			 if(err){
 				 throw Error(error);
 			 }

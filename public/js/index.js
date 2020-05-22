@@ -176,6 +176,40 @@ function init(){
 		// alert(document.getElementById("tiempoini").value);
 	});
 
+	document.getElementById("post6").addEventListener("click", function(e) {
+		var id  = document.getElementById("Name6").value;
+		var dExp = document.getElementById("dExp").value;
+
+		let url2 = '/api/EjercicioAn6'
+		let settings2 = {
+			method: 'POST',
+			body: JSON.stringify({
+				id: id,
+				diasAcum: parseInt(dExp)
+			}),
+			headers: {
+				'Content-Type': 'application/json'
+			},
+		}
+
+		fetch(url2, settings2)
+		.then( response => {
+			if ( response.ok ){
+				return response.json();
+			}
+
+			throw new Error ( response.statusText );
+		})
+		.then( responseJSON => {
+
+			console.log(responseJSON);
+		})
+		.catch( err => {
+			console.log( err );
+		})
+		// alert(document.getElementById("tiempoini").value);
+	});
+
 
 	fetch(url, settings)
 		.then( response => {
@@ -190,7 +224,7 @@ function init(){
 			for ( let i = 0; i < responseJSON.length; i ++ ){
 				$('.listOfVPs').append(`<li>
 				${responseJSON[i].nombre} - Tiene tiempo de Inicio: ${responseJSON[i].tiempoInicio} 
-										</li>`)
+										- Tiene experiencia: ${responseJSON[i].experiencia}</li>`)
 			}
 		})
 		.catch( err => {
