@@ -181,13 +181,12 @@ function init(){
 		var dExp = document.getElementById("dExp").value;
 
 
-
 		let url2 = '/api/EjercicioAn6'
 		let settings2 = {
 			method: 'POST',
 			body: JSON.stringify({
 				id: id,
-				experiencia: dExp
+				experiencia: String(dExp)
 			}),
 			headers: {
 				'Content-Type': 'application/json'
