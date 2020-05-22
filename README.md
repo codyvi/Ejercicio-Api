@@ -11,19 +11,21 @@ Maneja el modelo de datos que accesa al clúster de MongoDB a través del driver
 
 Ejemplo del código en este repo
 ```sh
-let vicepresidenciaSchema = mongoose.Schema({
-	vp: { type : String },
-	gastosjd19: { type: Number },
-	planjd19 : { type: Number },
-	gastosjd18 : { type: Number },
-	gastosjd14 : { type : Number }
+let ejercicioSchema = mongoose.Schema({
+	nombre: { type : String },
+	nivel: { type : Number },
+	tiempoInicio: {type : Number},
+	tiempoFinal: {type : Number},
+	tiempoAcumulado: {type : Number},
+	diasAcumulados: {type : Number},
+	experiencia: {type : String}
 });
 ```
 
 Cuando tengamos el esquema, necesitamos convertirlo a un modelo que podamos usar para hacer las llamadas a la API.
 
 ```sh
-let Vicepresidencia = mongoose.model( 'Viajes', vicepresidenciaSchema );
+let Vicepresidencia = mongoose.model( 'ejercicios', ejercicioSchema );
 ```
 
 'Viajes' es el nombre de la colección que se guardará en Mongo para manejar los archivos con dicho esquema. Por defecto Mongo convierte el nombre que demos a plural y minúsculas. Si definiéramos 
@@ -54,7 +56,7 @@ let VPList = {
 Contiene los métodos a los que accesaremos para leer o escribir información; cada método hace uso de los modelos que definimos previamente en el model.js
 
 ```sh
-app.get( "/api/gastosVP", ( req, res, next ) => {
+app.get( "/api/ejercicio", ( req, res, next ) => {
 	VPList.get()
 		.then( vicepresidencia => {
 			return res.status( 200 ).json( vicepresidencia );
